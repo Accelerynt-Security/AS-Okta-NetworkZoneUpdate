@@ -21,7 +21,7 @@ The following items are required under the template settings during deployment:
 
 * An Okta Admin account and [API token](https://developer.okta.com/docs/guides/create-an-api-token/main/)
 * An Okta [Network Zone](https://help.okta.com/en-us/Content/Topics/Security/network/network-zones.htm) to add IPs to
-* An [Azure Key Vault Secret](https://github.com/Accelerynt-Security/AS-Okta-NetworkZoneUpdate#create-an-azure-key-vault-secret) containing your App Registration Secret 
+* An [Azure Key Vault Secret](https://github.com/Accelerynt-Security/AS-Okta-NetworkZoneUpdate#create-an-azure-key-vault-secret) containing your Okta API Token 
 
 
 # 
@@ -36,7 +36,7 @@ Navigate to an existing Key Vault or create a new one. From the Key Vault overvi
 
 ![NetworkZone_Key_Vault_1](Images/NetworkZone_Key_Vault_1.png)
 
-Choose a name for the secret, such as "**AS-Okta-NetworkZoneUpdate-API-Token**", and enter the App Registration Secret copied previously in the "**Value**" field. All other settings can be left as is. Click "**Create**". 
+Choose a name for the secret, such as "**AS-Okta-NetworkZoneUpdate-API-Token**", and enter the Okta API Token copied previously in the "**Value**" field. All other settings can be left as is. Click "**Create**". 
 
 ![NetworkZone_Key_Vault_2](Images/NetworkZone_Key_Vault_2.png)
 
@@ -110,7 +110,7 @@ The same connection may need to be reselected for the second step. After a valid
 #
 ### Granting Access to Azure Key Vault
 
-Before the Logic App can run successfully, the Key Vault connection created during deployment must be granted access to the Key Vault storing your App Registration Secret.
+Before the Logic App can run successfully, the Key Vault connection created during deployment must be granted access to the Key Vault storing your Okta API Token.
 
 From the Key Vault "**Access policies**" page, click "**Create**".
 
