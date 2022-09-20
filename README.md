@@ -9,7 +9,9 @@ For any technical questions, please contact info@accelerynt.com
 
 This playbook is intended to be run from a Microsoft Sentinel Incident. It will add the IP address from Microsoft Sentinel Incidents to an Okta Network Zone of your choosing.
 
-![NetworkZone_Demo](Images/NetworkZone_Demo.png)
+![NetworkZone_Demo_1](Images/NetworkZone_Demo_1.png)
+
+![NetworkZone_Demo_2](Images/NetworkZone_Demo_2.png)
 
 
 #
