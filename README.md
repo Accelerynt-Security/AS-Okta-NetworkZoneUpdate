@@ -17,7 +17,8 @@ This playbook is intended to be run from a Microsoft Sentinel Incident. It will 
 
 The following items are required under the template settings during deployment: 
 
-* An Okta Admin account and Network Zone to add IPs to
+* An Okta Admin account and [API token](https://developer.okta.com/docs/guides/create-an-api-token/main/)
+* An Okta [Network Zone](https://help.okta.com/en-us/Content/Topics/Security/network/network-zones.htm) to add IPs to
 * An [Azure Key Vault Secret](https://github.com/Accelerynt-Security/AS-Okta-Integration#create-an-azure-key-vault-secret) containing your App Registration Secret 
 
 
