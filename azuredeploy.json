@@ -7,7 +7,7 @@
     },
     "parameters": {
         "PlaybookName": {
-            "defaultValue": "AS-Okta-Integration",
+            "defaultValue": "AS-Okta-NetworkZoneUpdate",
             "type": "String"
         },
         "OktaSubdomain": {
