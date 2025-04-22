@@ -272,94 +272,207 @@
                                     "inputs": {
                                         "content": "@body('HTTP_-_Get_Network_Zones')",
                                         "schema": {
+                                            "type": "array",
                                             "items": {
+                                                "type": "object",
                                                 "properties": {
-                                                    "_links": {
-                                                        "properties": {
-                                                            "deactivate": {
-                                                                "properties": {
-                                                                    "hints": {
-                                                                        "properties": {
-                                                                            "allow": {
-                                                                                "items": {
-                                                                                    "type": "string"
-                                                                                },
-                                                                                "type": "array"
-                                                                            }
-                                                                        },
-                                                                        "type": "object"
-                                                                    },
-                                                                    "href": {
-                                                                        "type": "string"
-                                                                    }
-                                                                },
-                                                                "type": "object"
-                                                            },
-                                                            "self": {
-                                                                "properties": {
-                                                                    "hints": {
-                                                                        "properties": {
-                                                                            "allow": {
-                                                                                "items": {
-                                                                                    "type": "string"
-                                                                                },
-                                                                                "type": "array"
-                                                                            }
-                                                                        },
-                                                                        "type": "object"
-                                                                    },
-                                                                    "href": {
-                                                                        "type": "string"
-                                                                    }
-                                                                },
-                                                                "type": "object"
-                                                            }
-                                                        },
-                                                        "type": "object"
+                                                    "type": {
+                                                        "type": "string",
+                                                        "enum": [
+                                                            "IP",
+                                                            "DYNAMIC_V2"
+                                                        ]
                                                     },
-                                                    "created": {
-                                                        "type": "string"
-                                                    },
-                                                    "gateways": {},
                                                     "id": {
-                                                        "type": "string"
-                                                    },
-                                                    "lastUpdated": {
                                                         "type": "string"
                                                     },
                                                     "name": {
                                                         "type": "string"
                                                     },
-                                                    "proxies": {},
                                                     "status": {
-                                                        "type": "string"
+                                                        "type": "string",
+                                                        "enum": [
+                                                            "ACTIVE",
+                                                            "INACTIVE"
+                                                        ]
+                                                    },
+                                                    "usage": {
+                                                        "type": "string",
+                                                        "enum": [
+                                                            "POLICY",
+                                                            "BLOCKLIST"
+                                                        ]
+                                                    },
+                                                    "created": {
+                                                        "type": "string",
+                                                        "format": "date-time"
+                                                    },
+                                                    "lastUpdated": {
+                                                        "type": "string",
+                                                        "format": "date-time"
                                                     },
                                                     "system": {
                                                         "type": "boolean"
                                                     },
-                                                    "type": {
-                                                        "type": "string"
+                                                    "gateways": {
+                                                        "type": [
+                                                            "array",
+                                                            "null"
+                                                        ],
+                                                        "items": {
+                                                            "type": "object",
+                                                            "properties": {
+                                                                "type": {
+                                                                    "type": "string",
+                                                                    "enum": [
+                                                                        "RANGE",
+                                                                        "CIDR"
+                                                                    ]
+                                                                },
+                                                                "value": {
+                                                                    "type": "string"
+                                                                }
+                                                            }
+                                                        }
                                                     },
-                                                    "usage": {
-                                                        "type": "string"
+                                                    "proxies": {
+                                                        "type": [
+                                                            "array",
+                                                            "null"
+                                                        ],
+                                                        "items": {
+                                                            "type": "object",
+                                                            "properties": {
+                                                                "type": {
+                                                                    "type": "string",
+                                                                    "enum": [
+                                                                        "RANGE"
+                                                                    ]
+                                                                },
+                                                                "value": {
+                                                                    "type": "string"
+                                                                }
+                                                            }
+                                                        }
+                                                    },
+                                                    "locations": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "include": {
+                                                                "type": "array",
+                                                                "items": {
+                                                                    "type": "string"
+                                                                }
+                                                            },
+                                                            "exclude": {
+                                                                "type": "array",
+                                                                "items": {
+                                                                    "type": "string"
+                                                                }
+                                                            }
+                                                        }
+                                                    },
+                                                    "ipServiceCategories": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "include": {
+                                                                "type": "array",
+                                                                "items": {
+                                                                    "type": "string"
+                                                                }
+                                                            },
+                                                            "exclude": {
+                                                                "type": "array",
+                                                                "items": {
+                                                                    "type": "string"
+                                                                }
+                                                            }
+                                                        }
+                                                    },
+                                                    "asns": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "include": {
+                                                                "type": "array",
+                                                                "items": {
+                                                                    "type": "string"
+                                                                }
+                                                            },
+                                                            "exclude": {
+                                                                "type": "array",
+                                                                "items": {
+                                                                    "type": "string"
+                                                                }
+                                                            }
+                                                        }
+                                                    },
+                                                    "_links": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "self": {
+                                                                "type": "object",
+                                                                "properties": {
+                                                                    "href": {
+                                                                        "type": "string",
+                                                                        "format": "uri"
+                                                                    },
+                                                                    "hints": {
+                                                                        "type": "object",
+                                                                        "properties": {
+                                                                            "allow": {
+                                                                                "type": "array",
+                                                                                "items": {
+                                                                                    "type": "string"
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            },
+                                                            "deactivate": {
+                                                                "type": "object",
+                                                                "properties": {
+                                                                    "href": {
+                                                                        "type": "string",
+                                                                        "format": "uri"
+                                                                    },
+                                                                    "hints": {
+                                                                        "type": "object",
+                                                                        "properties": {
+                                                                            "allow": {
+                                                                                "type": "array",
+                                                                                "items": {
+                                                                                    "type": "string"
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            },
+                                                            "activate": {
+                                                                "type": "object",
+                                                                "properties": {
+                                                                    "href": {
+                                                                        "type": "string",
+                                                                        "format": "uri"
+                                                                    },
+                                                                    "hints": {
+                                                                        "type": "object",
+                                                                        "properties": {
+                                                                            "allow": {
+                                                                                "type": "array",
+                                                                                "items": {
+                                                                                    "type": "string"
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
                                                     }
-                                                },
-                                                "required": [
-                                                    "type",
-                                                    "id",
-                                                    "name",
-                                                    "status",
-                                                    "usage",
-                                                    "created",
-                                                    "lastUpdated",
-                                                    "system",
-                                                    "gateways",
-                                                    "proxies",
-                                                    "_links"
-                                                ],
-                                                "type": "object"
-                                            },
-                                            "type": "array"
+                                                }
+                                            }
                                         }
                                     }
                                 }
